@@ -56,15 +56,71 @@
 		02D2A96A267DD64B0026FD2F /* My Futbol */ = {
 			isa = PBXGroup;
 			children = (
-				02D2A96B267DD64B0026FD2F /* AppDelegate.swift */,
-				02D2A96D267DD64B0026FD2F /* SceneDelegate.swift */,
-				02D2A96F267DD64B0026FD2F /* ViewController.swift */,
-				02D2A971267DD64B0026FD2F /* Main.storyboard */,
+				02D2A985267DD67B0026FD2F /* Base */,
+				02D2A984267DD6760026FD2F /* Extensions */,
+				02D2A983267DD66F0026FD2F /* Network */,
+				02D2A982267DD66B0026FD2F /* Model */,
+				02D2A981267DD6650026FD2F /* View */,
+				02D2A980267DD65F0026FD2F /* ViewModel */,
+				02D2A97F267DD6590026FD2F /* Controller */,
 				02D2A974267DD6500026FD2F /* Assets.xcassets */,
-				02D2A976267DD6500026FD2F /* LaunchScreen.storyboard */,
-				02D2A979267DD6500026FD2F /* Info.plist */,
 			);
 			path = "My Futbol";
+			sourceTree = "<group>";
+		};
+		02D2A97F267DD6590026FD2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02D2A96F267DD64B0026FD2F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		02D2A980267DD65F0026FD2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		02D2A981267DD6650026FD2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02D2A971267DD64B0026FD2F /* Main.storyboard */,
+				02D2A976267DD6500026FD2F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		02D2A982267DD66B0026FD2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02D2A983267DD66F0026FD2F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		02D2A984267DD6760026FD2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		02D2A985267DD67B0026FD2F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				02D2A96B267DD64B0026FD2F /* AppDelegate.swift */,
+				02D2A96D267DD64B0026FD2F /* SceneDelegate.swift */,
+				02D2A979267DD6500026FD2F /* Info.plist */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
