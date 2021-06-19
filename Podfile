@@ -5,5 +5,5 @@ target 'My Futbol' do
   pod 'Kingfisher' 
   pod 'SkeletonView'
   pod 'Alamofire', '~> 5.4'
-
+  pod 'SwiftyJSON', '~> 4.0'
 end

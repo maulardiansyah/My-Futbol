@@ -13,6 +13,15 @@
 		02D2A973267DD64B0026FD2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D2A971267DD64B0026FD2F /* Main.storyboard */; };
 		02D2A975267DD6500026FD2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D2A974267DD6500026FD2F /* Assets.xcassets */; };
 		02D2A978267DD6500026FD2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D2A976267DD6500026FD2F /* LaunchScreen.storyboard */; };
+		02D2A987267DDA690026FD2F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A986267DDA690026FD2F /* Services.swift */; };
+		02D2A989267DDA8C0026FD2F /* ServicesPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A988267DDA8C0026FD2F /* ServicesPath.swift */; };
+		02D2A98B267DDAA00026FD2F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A98A267DDAA00026FD2F /* Network.swift */; };
+		02D2A98D267DDDEC0026FD2F /* ServicesMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A98C267DDDEC0026FD2F /* ServicesMethod.swift */; };
+		02D2A990267DE2EE0026FD2F /* mAllLeagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A98F267DE2EE0026FD2F /* mAllLeagues.swift */; };
+		02D2A992267DE39D0026FD2F /* mSeasonLeague.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A991267DE39D0026FD2F /* mSeasonLeague.swift */; };
+		02D2A994267DE5080026FD2F /* mStandingsLeague.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A993267DE5080026FD2F /* mStandingsLeague.swift */; };
+		02D2A996267DEA6D0026FD2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A995267DEA6D0026FD2F /* Extensions.swift */; };
+		02D2A998267DED0F0026FD2F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2A997267DED0F0026FD2F /* DateExtensions.swift */; };
 		CB6799BFB93D580FDDCC62E3 /* libPods-My Futbol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 315B260D6B057ADEDD22967B /* libPods-My Futbol.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +35,15 @@
 		02D2A974267DD6500026FD2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02D2A977267DD6500026FD2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02D2A979267DD6500026FD2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02D2A986267DDA690026FD2F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		02D2A988267DDA8C0026FD2F /* ServicesPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPath.swift; sourceTree = "<group>"; };
+		02D2A98A267DDAA00026FD2F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		02D2A98C267DDDEC0026FD2F /* ServicesMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesMethod.swift; sourceTree = "<group>"; };
+		02D2A98F267DE2EE0026FD2F /* mAllLeagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mAllLeagues.swift; sourceTree = "<group>"; };
+		02D2A991267DE39D0026FD2F /* mSeasonLeague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mSeasonLeague.swift; sourceTree = "<group>"; };
+		02D2A993267DE5080026FD2F /* mStandingsLeague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mStandingsLeague.swift; sourceTree = "<group>"; };
+		02D2A995267DEA6D0026FD2F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		02D2A997267DED0F0026FD2F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		315B260D6B057ADEDD22967B /* libPods-My Futbol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My Futbol.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		374AA065C6B47A444B425789 /* Pods-My Futbol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Futbol.release.xcconfig"; path = "Target Support Files/Pods-My Futbol/Pods-My Futbol.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +120,9 @@
 		02D2A982267DD66B0026FD2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02D2A98F267DE2EE0026FD2F /* mAllLeagues.swift */,
+				02D2A991267DE39D0026FD2F /* mSeasonLeague.swift */,
+				02D2A993267DE5080026FD2F /* mStandingsLeague.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +130,10 @@
 		02D2A983267DD66F0026FD2F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				02D2A986267DDA690026FD2F /* Services.swift */,
+				02D2A988267DDA8C0026FD2F /* ServicesPath.swift */,
+				02D2A98C267DDDEC0026FD2F /* ServicesMethod.swift */,
+				02D2A98A267DDAA00026FD2F /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -116,6 +141,8 @@
 		02D2A984267DD6760026FD2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02D2A995267DEA6D0026FD2F /* Extensions.swift */,
+				02D2A997267DED0F0026FD2F /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,8 +270,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D2A990267DE2EE0026FD2F /* mAllLeagues.swift in Sources */,
 				02D2A970267DD64B0026FD2F /* ViewController.swift in Sources */,
+				02D2A994267DE5080026FD2F /* mStandingsLeague.swift in Sources */,
 				02D2A96C267DD64B0026FD2F /* AppDelegate.swift in Sources */,
+				02D2A992267DE39D0026FD2F /* mSeasonLeague.swift in Sources */,
+				02D2A998267DED0F0026FD2F /* DateExtensions.swift in Sources */,
+				02D2A98B267DDAA00026FD2F /* Network.swift in Sources */,
+				02D2A98D267DDDEC0026FD2F /* ServicesMethod.swift in Sources */,
+				02D2A989267DDA8C0026FD2F /* ServicesPath.swift in Sources */,
+				02D2A987267DDA690026FD2F /* Services.swift in Sources */,
+				02D2A996267DEA6D0026FD2F /* Extensions.swift in Sources */,
 				02D2A96E267DD64B0026FD2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
