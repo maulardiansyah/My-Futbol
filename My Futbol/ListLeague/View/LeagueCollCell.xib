@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LeagueCollCell" customModule="My_Futbol" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="188"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="194" height="188"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hlw-cP-Erd">
+                        <rect key="frame" x="8" y="10" width="178" height="168"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mso-Bx-LOG">
+                                <rect key="frame" x="6" y="20.5" width="166" height="127.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-0l-zfY">
+                                        <rect key="frame" x="33" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="NIN-my-8Hv"/>
+                                            <constraint firstAttribute="width" constant="100" id="UD3-PO-fke"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNq-ST-dNu">
+                                        <rect key="frame" x="62.5" y="108" width="41.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mso-Bx-LOG" secondAttribute="trailing" constant="6" id="ctj-3w-Oh1"/>
+                            <constraint firstItem="mso-Bx-LOG" firstAttribute="leading" secondItem="Hlw-cP-Erd" secondAttribute="leading" constant="6" id="hQw-Dj-WtA"/>
+                            <constraint firstItem="mso-Bx-LOG" firstAttribute="centerY" secondItem="Hlw-cP-Erd" secondAttribute="centerY" id="xvC-fd-z8I"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Hlw-cP-Erd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="27U-px-pFZ"/>
+                <constraint firstAttribute="trailing" secondItem="Hlw-cP-Erd" secondAttribute="trailing" constant="8" id="I06-I9-1rI"/>
+                <constraint firstItem="Hlw-cP-Erd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="g8t-3G-MOI"/>
+                <constraint firstAttribute="bottom" secondItem="Hlw-cP-Erd" secondAttribute="bottom" constant="10" id="tmJ-A2-9KC"/>
+            </constraints>
+            <size key="customSize" width="194" height="188"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="container" destination="Hlw-cP-Erd" id="yX2-l4-4C7"/>
+                <outlet property="imgLeague" destination="CQE-0l-zfY" id="zLX-tM-g5P"/>
+                <outlet property="lblNameLeague" destination="YNq-ST-dNu" id="1gR-gT-Hbm"/>
+            </connections>
+            <point key="canvasLocation" x="217.39130434782609" y="154.01785714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

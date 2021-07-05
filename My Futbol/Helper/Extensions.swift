@@ -5,6 +5,7 @@
 //  Created by Maul on 19/06/21.
 //
 import Kingfisher
+import Toast_Swift
 
 /// UI Image View
 extension UIImageView
@@ -24,10 +25,31 @@ extension UIImageView
     }
 }
 
+/// UIView
+extension UIView
+{
+    func addConstraintsWithFormat(format: String, views: UIView...) {
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            view.translatesAutoresizingMaskIntoConstraints = false
+            viewsDictionary[key] = view
+        }
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
+    }
+    
+    func showToast(_ message: String, duration: TimeInterval = 2.0, position: ToastPosition = .bottom, bgColor: UIColor = UIColor.black.withAlphaComponent(0.8)) {
+        var style = ToastStyle()
+        style.backgroundColor = bgColor
+        self.makeToast(message, duration: duration, position: position, style: style)
+    }
+}
+
 /// String
 extension String
 {
-    func datePrefixTimezon() -> String {
+    func datePrefixTimezone() -> String {
         return "\(self.prefix(10))"
     }
     

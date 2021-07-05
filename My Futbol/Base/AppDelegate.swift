@@ -14,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /// set default back buttom image di navigation
+        UINavigationBar.appearance().backIndicatorImage = .icBtBack
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = .icBtBack
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        /// disable warning autolayout
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         return true
     }
 
