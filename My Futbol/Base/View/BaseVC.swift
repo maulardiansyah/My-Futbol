@@ -15,6 +15,8 @@ class BaseVC: UIViewController
     
     var prevVC: UIViewController?
     
+    let progressView = ProgressView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

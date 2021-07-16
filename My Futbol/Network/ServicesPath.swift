@@ -20,7 +20,6 @@ extension Services {
         /// Get Standings League By Season
         case .getStandings(let leagueId, let season):
             return "/leagues/\(leagueId)/standings?season=\(season)"
-        
         }
     }
 }

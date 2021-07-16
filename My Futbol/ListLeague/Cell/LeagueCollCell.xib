@@ -37,15 +37,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mso-Bx-LOG" secondAttribute="bottom" constant="8" id="Zsp-xE-Cfs"/>
                             <constraint firstAttribute="trailing" secondItem="mso-Bx-LOG" secondAttribute="trailing" constant="6" id="ctj-3w-Oh1"/>
                             <constraint firstItem="mso-Bx-LOG" firstAttribute="leading" secondItem="Hlw-cP-Erd" secondAttribute="leading" constant="6" id="hQw-Dj-WtA"/>
+                            <constraint firstItem="mso-Bx-LOG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hlw-cP-Erd" secondAttribute="top" constant="8" id="ibm-FY-CGp"/>
                             <constraint firstItem="mso-Bx-LOG" firstAttribute="centerY" secondItem="Hlw-cP-Erd" secondAttribute="centerY" id="xvC-fd-z8I"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
