@@ -15,8 +15,6 @@ class BaseVC: UIViewController
     
     var prevVC: UIViewController?
     
-    let progressView = ProgressView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -70,14 +68,6 @@ class BaseVC: UIViewController
     
     func setNavigation(isHidden: Bool, animated: Bool = false) {
         navigationController?.setNavigationBarHidden(isHidden, animated: animated)
-    }
-    
-    func toNext(vc: UIViewController) {
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func toPresent(vc: UIViewController) {
-        present(vc, animated: true, completion: nil)
     }
     
     func setupViews() {}

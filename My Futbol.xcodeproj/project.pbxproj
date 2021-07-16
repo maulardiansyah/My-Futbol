@@ -28,6 +28,9 @@
 		D9111C742692062100539A95 /* LeagueCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9111C722692062100539A95 /* LeagueCollCell.swift */; };
 		D9111C752692062100539A95 /* LeagueCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9111C732692062100539A95 /* LeagueCollCell.xib */; };
 		D9111C7E2692125400539A95 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9111C7D2692125400539A95 /* BaseVC.swift */; };
+		D96425C426A1E6880086DFBC /* StandingsTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96425C226A1E6880086DFBC /* StandingsTableCellTableViewCell.swift */; };
+		D96425C526A1E6880086DFBC /* StandingsTableCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96425C326A1E6880086DFBC /* StandingsTableCellTableViewCell.xib */; };
+		D96425C726A1E6E90086DFBC /* DetailLeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96425C626A1E6E90086DFBC /* DetailLeagueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		D9111C722692062100539A95 /* LeagueCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCollCell.swift; sourceTree = "<group>"; };
 		D9111C732692062100539A95 /* LeagueCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueCollCell.xib; sourceTree = "<group>"; };
 		D9111C7D2692125400539A95 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		D96425C226A1E6880086DFBC /* StandingsTableCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableCellTableViewCell.swift; sourceTree = "<group>"; };
+		D96425C326A1E6880086DFBC /* StandingsTableCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableCellTableViewCell.xib; sourceTree = "<group>"; };
+		D96425C626A1E6E90086DFBC /* DetailLeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLeagueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,8 @@
 		D9111C702692059200539A95 /* Standings */ = {
 			isa = PBXGroup;
 			children = (
+				D96425BF26A1E63A0086DFBC /* Cells */,
+				D96425C626A1E6E90086DFBC /* DetailLeagueView.swift */,
 			);
 			path = Standings;
 			sourceTree = "<group>";
@@ -195,6 +203,15 @@
 				D9111C7D2692125400539A95 /* BaseVC.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D96425BF26A1E63A0086DFBC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D96425C226A1E6880086DFBC /* StandingsTableCellTableViewCell.swift */,
+				D96425C326A1E6880086DFBC /* StandingsTableCellTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9111C752692062100539A95 /* LeagueCollCell.xib in Resources */,
+				D96425C526A1E6880086DFBC /* StandingsTableCellTableViewCell.xib in Resources */,
 				D9111C6B2691D5C300539A95 /* LaunchScreen.storyboard in Resources */,
 				02D2A975267DD6500026FD2F /* Assets.xcassets in Resources */,
 				02D2A973267DD64B0026FD2F /* Main.storyboard in Resources */,
@@ -326,6 +344,8 @@
 				D9111C7E2692125400539A95 /* BaseVC.swift in Sources */,
 				02D2A989267DDA8C0026FD2F /* ServicesPath.swift in Sources */,
 				02D2A987267DDA690026FD2F /* Services.swift in Sources */,
+				D96425C726A1E6E90086DFBC /* DetailLeagueView.swift in Sources */,
+				D96425C426A1E6880086DFBC /* StandingsTableCellTableViewCell.swift in Sources */,
 				02D2A996267DEA6D0026FD2F /* Extensions.swift in Sources */,
 				02D2A96E267DD64B0026FD2F /* SceneDelegate.swift in Sources */,
 			);

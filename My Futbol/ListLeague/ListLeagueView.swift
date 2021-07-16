@@ -24,7 +24,7 @@ class ListLeagueView: BaseVC {
         apiGetListLeague()
     }
     
-//MARK: - Setup Views
+//MARK: - Configure View
     override func setupViews() {
         super.setupViews()
         
@@ -84,6 +84,17 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectLeague(listLeague[indexPath.row])
+    }
+    
+    func selectLeague(_ league: mLeague) {
+        let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "detailLeague") as! DetailLeagueView
+        vc.leagueId = league.id ?? ""
+        vc.league = league
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
 
 //MARK: - Set Data & API
@@ -115,7 +126,7 @@ extension ListLeagueView
                 if let data = resData, let league = try? JSONDecoder().decode(mAllLeagues.self, from: data) {
                     self.listLeague = league.data ?? []
                 } else {
-                    self.view.showToast("Failed to decode")
+                    self.view.showToast("Failed decode data.")
                 }
             }
             
