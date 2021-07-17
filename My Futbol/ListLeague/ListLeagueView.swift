@@ -74,7 +74,7 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
         let width = (frame.width - CGFloat((colCount - 1) * 12)) - margin
         var estimatedWidth = width / CGFloat(colCount)
         estimatedWidth.round(.down)
-        return .init(width: estimatedWidth, height: 240)
+        return .init(width: estimatedWidth, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
