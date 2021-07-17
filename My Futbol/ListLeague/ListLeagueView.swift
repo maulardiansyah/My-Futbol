@@ -22,6 +22,13 @@ class ListLeagueView: BaseVC {
         setTitle("My Futbol")
         setImgHeader()
         apiGetListLeague()
+        
+        setNavigationRightButtons(titles: ["about"], icons: [UIImage.init(systemName: "person.fill")])
+    }
+    
+    override func rightButtonPressed(sender: UIBarButtonItem) {
+        let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "about") as! AboutView
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 //MARK: - Configure View

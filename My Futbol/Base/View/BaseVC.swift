@@ -67,6 +67,21 @@ class BaseVC: UIViewController
         navigationController?.setNavigationBarHidden(isHidden, animated: animated)
     }
     
+    func setNavigationRightButtons(titles: [String], icons: [UIImage?]) {
+        var rh = [UIBarButtonItem?](repeating: nil, count: titles.count)
+        for i in 0 ..< rh.count {
+            if icons.count > 0 {
+                rh[i] = UIBarButtonItem(image: icons[i]?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
+                rh[i]?.title = titles[i]
+            } else {
+                rh[i] = UIBarButtonItem(title: titles[i], style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
+            }
+        }
+        navigationItem.rightBarButtonItems = rh as? [UIBarButtonItem]
+    }
+    
+    @objc func rightButtonPressed(sender : UIBarButtonItem) { }
+    
     func setupViews() {}
     
     deinit {

@@ -30,6 +30,7 @@
 		D96425C426A1E6880086DFBC /* StandingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96425C226A1E6880086DFBC /* StandingsTableCell.swift */; };
 		D96425C526A1E6880086DFBC /* StandingsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96425C326A1E6880086DFBC /* StandingsTableCell.xib */; };
 		D96425C726A1E6E90086DFBC /* DetailLeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96425C626A1E6E90086DFBC /* DetailLeagueView.swift */; };
+		D96425CA26A366DE0086DFBC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96425C926A366DE0086DFBC /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D96425C226A1E6880086DFBC /* StandingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableCell.swift; sourceTree = "<group>"; };
 		D96425C326A1E6880086DFBC /* StandingsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableCell.xib; sourceTree = "<group>"; };
 		D96425C626A1E6E90086DFBC /* DetailLeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLeagueView.swift; sourceTree = "<group>"; };
+		D96425C926A366DE0086DFBC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				02D2A982267DD66B0026FD2F /* Model */,
 				02D2A97F267DD6590026FD2F /* ListLeague */,
 				D9111C702692059200539A95 /* Standings */,
+				D96425C826A366CD0086DFBC /* About */,
 				02D2A974267DD6500026FD2F /* Assets.xcassets */,
 			);
 			path = "My Futbol";
@@ -209,6 +212,14 @@
 				D96425C326A1E6880086DFBC /* StandingsTableCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D96425C826A366CD0086DFBC /* About */ = {
+			isa = PBXGroup;
+			children = (
+				D96425C926A366DE0086DFBC /* AboutView.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +342,7 @@
 				02D2A970267DD64B0026FD2F /* ListLeagueView.swift in Sources */,
 				02D2A994267DE5080026FD2F /* mStandingsLeague.swift in Sources */,
 				02D2A96C267DD64B0026FD2F /* AppDelegate.swift in Sources */,
+				D96425CA26A366DE0086DFBC /* AboutView.swift in Sources */,
 				02D2A992267DE39D0026FD2F /* mSeasonLeague.swift in Sources */,
 				02D2A98B267DDAA00026FD2F /* Network.swift in Sources */,
 				D9111C742692062100539A95 /* LeagueCollCell.swift in Sources */,
