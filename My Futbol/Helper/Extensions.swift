@@ -28,17 +28,6 @@ extension UIImageView
 /// UIView
 extension UIView
 {
-    func addConstraintsWithFormat(format: String, views: UIView...) {
-        var viewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
     func showToast(_ message: String, duration: TimeInterval = 2.0, position: ToastPosition = .bottom, bgColor: UIColor = UIColor.black.withAlphaComponent(0.8)) {
         var style = ToastStyle()
         style.backgroundColor = bgColor
@@ -56,10 +45,6 @@ extension UIView
 /// String
 extension String
 {
-    func datePrefixTimezone() -> String {
-        return "\(self.prefix(10))"
-    }
-    
     func hexToColor() -> UIColor {
         let strTemp = self.replacingOccurrences(of: "#", with: "")
         let convertHex = UInt(String(strTemp.suffix(6)), radix: 16) ?? 0

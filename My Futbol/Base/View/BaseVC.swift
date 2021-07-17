@@ -11,9 +11,6 @@ class BaseVC: UIViewController
 {
     var titleText = ""
     var subtitleText = ""
-    var isLoading: Bool = false
-    
-    var prevVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

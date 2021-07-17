@@ -91,7 +91,9 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
     
     func selectLeague(_ league: mLeague) {
         let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "detailLeague") as! DetailLeagueView
-        vc.leagueId = league.id ?? ""
+        
+        let leagueIdTemp = league.id ?? ""
+        vc.leagueId = leagueIdTemp == "eps.1" ? "esp.1" : leagueIdTemp ///karena aslinya kodenya esp.1 buat dapetin data, tetapi respon dari open api typo jadi "eps.1"
         vc.league = league
         self.navigationController?.pushViewController(vc, animated: false)
     }
@@ -117,7 +119,6 @@ extension ListLeagueView
     }
     
     func apiGetListLeague() {
-        collectionLeague.isSkeletonable = true
         collectionLeague.showAnimatedGradientSkeleton()
         Network.request(.getAllLeagues) { resData, error in
             if let e = error {

@@ -6,12 +6,12 @@
 //
 
 struct mSeasonAvailable: Codable {
-    let data: [mSeasonLeague]?
+    let data: mSeasonLeague?
 }
 
 struct mSeasonLeague: Codable {
     let name: String?
-    let seasons: [mSeasonAvailable]?
+    let seasons: [mSeasonDetails]?
 }
 
 struct mSeasonDetails: Codable {
