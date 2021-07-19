@@ -27,7 +27,7 @@ class StandingsTableCell: UITableViewCell {
         return UINib(nibName: "StandingsTableCell", bundle: nil)
     }
     
-    var club: mTeamStanding? {
+    var club: TeamStanding? {
         didSet {
             lblPosition.text = club?.stats?[8].displayValue ?? "" + "."
             imgClub.setImage(club?.team?.logos?.first?.href ?? "")

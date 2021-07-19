@@ -5,16 +5,16 @@
 //  Created by Maul on 19/06/21.
 //
 
-struct mAllLeagues: Codable {
-    let data: [mLeague]?
+struct AllLeagues: Codable {
+    let data: [League]?
     let status: Bool?
 }
 
-struct mLeague: Codable {
+struct League: Codable {
     let id, name, abbr: String?
-    let logos: mLogoLeague?
+    let logos: LogoLeague?
 }
 
-struct mLogoLeague: Codable {
+struct LogoLeague: Codable {
     let light, dark: String?
 }

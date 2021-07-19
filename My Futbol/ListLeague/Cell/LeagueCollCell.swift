@@ -19,7 +19,7 @@ class LeagueCollCell: UICollectionViewCell {
         return UINib(nibName: "LeagueCollCell", bundle: nil)
     }
     
-    var league: mLeague? {
+    var league: League? {
         didSet {
             lblNameLeague.text = league?.name ?? ""
             imgLeague.setImage(league?.logos?.light ?? "")

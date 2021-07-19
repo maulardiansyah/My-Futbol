@@ -7,10 +7,8 @@
 
 import UIKit
 
-class BaseVC: UIViewController
-{
+class BaseVC: UIViewController {
     var titleText = ""
-    var subtitleText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +29,9 @@ class BaseVC: UIViewController
         navigationItem.title = " "
     }
     
-    func setTitle(_ title: String, subtitle: String = "", titleColor: UIColor = .darkBlue) {
-        let navbarH = self.navigationController?.navigationBar.frame.height ?? 0
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: navbarH))
+    func setTitle(_ title: String, titleColor: UIColor = .darkBlue) {
+        let navbar = self.navigationController?.navigationBar.frame.height ?? 0
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: navbar))
         label.textAlignment = .left
         label.text = title
         label.numberOfLines = 0
@@ -41,17 +39,15 @@ class BaseVC: UIViewController
         
         let attributText = NSMutableAttributedString()
         
-        var boldText = "\(title)"
-        if(subtitle != ""){ boldText += "\n" }
-        let boldAttrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .semibold)]
-        let boldAttributedString = NSMutableAttributedString(string:boldText, attributes:boldAttrs as [NSAttributedString.Key : Any])
-        
-        let normalText = "\(subtitle)"
-        let normalAttrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .light)]
-        let normalAttributedString = NSMutableAttributedString(string:normalText, attributes:normalAttrs as [NSAttributedString.Key : Any])
+        let boldAttrs = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)
+        ]
+        let boldAttributedString = NSMutableAttributedString(
+            string: title,
+            attributes: boldAttrs as [NSAttributedString.Key: Any]
+        )
         
         attributText.append(boldAttributedString)
-        attributText.append(normalAttributedString)
         
         label.attributedText = attributText
         navigationItem.titleView = label
@@ -68,19 +64,19 @@ class BaseVC: UIViewController
     }
     
     func setNavigationRightButtons(titles: [String], icons: [UIImage?]) {
-        var rh = [UIBarButtonItem?](repeating: nil, count: titles.count)
-        for i in 0 ..< rh.count {
+        var rightButton = [UIBarButtonItem?](repeating: nil, count: titles.count)
+        for i in 0 ..< rightButton.count {
             if icons.count > 0 {
-                rh[i] = UIBarButtonItem(image: icons[i]?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
-                rh[i]?.title = titles[i]
+                rightButton[i] = UIBarButtonItem(image: icons[i]?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
+                rightButton[i]?.title = titles[i]
             } else {
-                rh[i] = UIBarButtonItem(title: titles[i], style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
+                rightButton[i] = UIBarButtonItem(title: titles[i], style: .plain, target: self, action: #selector(rightButtonPressed(sender:)))
             }
         }
-        navigationItem.rightBarButtonItems = rh as? [UIBarButtonItem]
+        navigationItem.rightBarButtonItems = rightButton as? [UIBarButtonItem]
     }
     
-    @objc func rightButtonPressed(sender : UIBarButtonItem) { }
+    @objc func rightButtonPressed(sender: UIBarButtonItem) { }
     
     func setupViews() {}
     

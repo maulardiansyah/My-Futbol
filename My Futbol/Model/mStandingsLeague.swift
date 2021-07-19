@@ -6,44 +6,40 @@
 //
 
 //MARK: - Standings Season
-struct mStandingsLeague: Codable {
+struct StandingsLeague: Codable {
     let status: Bool?
-    let data: mSeasonStandingDetail?
+    let data: SeasonStandingDetail?
 }
 
-struct mSeasonStandingDetail: Codable {
+struct SeasonStandingDetail: Codable {
     let name, seasonDisplay: String?
     let season: Int?
-    let standings: [mTeamStanding]?
+    let standings: [TeamStanding]?
 }
 
 // MARK: - Standings Per team
-struct mTeamStanding: Codable {
-    let team: mTeam?
-    let note: mNoteStanding?
-    let stats: [mStatsStandings]?
+struct TeamStanding: Codable {
+    let team: Team?
+    let note: NoteStanding?
+    let stats: [StatsStandings]?
 }
 
-struct mTeam: Codable {
+struct Team: Codable {
     let id, location, name: String?
     let abbreviation, displayName: String?
-    let logos: [mLogoTeam]?
+    let logos: [LogoTeam]?
 }
 
-struct mNoteStanding: Codable {
+struct NoteStanding: Codable {
     let color, description: String?
     let rank: Int?
 }
 
-struct mStatsStandings: Codable {
+struct StatsStandings: Codable {
     let name, displayName, shortDisplayName, displayValue: String?
     let value: Int?
 }
 
-struct mLogoTeam: Codable {
+struct LogoTeam: Codable {
     let href: String?
 }
-
-
-
-

@@ -7,7 +7,6 @@
 
 import UIKit
 
-extension UIImage
-{
+extension UIImage {
     class var icBtBack: UIImage? { return UIImage(named: "icBtBack") }
 }

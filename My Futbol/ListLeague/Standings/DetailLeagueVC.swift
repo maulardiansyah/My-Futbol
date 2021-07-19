@@ -1,5 +1,5 @@
 //
-//  DetailLeagueView.swift
+//  DetailLeagueVC.swift
 //  My Futbol
 //
 //  Created by Maul on 16/07/21.
@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-class DetailLeagueView: BaseVC {
+class DetailLeagueVC: BaseVC {
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var containerTable: UIView!
@@ -23,14 +23,14 @@ class DetailLeagueView: BaseVC {
     @IBOutlet weak var lblSelectedSeason: UILabel!
     @IBOutlet weak var separator: UIView!
     
-    let seasonOpt = DropDown()
+    private let seasonOpt = DropDown()
     
     var leagueId = ""
     var seasonSelected = ""
     
-    var league: mLeague?
-    var detailSeason: mSeasonLeague?
-    var standingDetail: mSeasonStandingDetail?
+    var league: League?
+    var detailSeason: SeasonLeague?
+    var standingDetail: SeasonStandingDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,21 +84,21 @@ class DetailLeagueView: BaseVC {
 }
 
 //MARK: Table Data
-extension DetailLeagueView: UITableViewDelegate, UITableViewDataSource
+extension DetailLeagueVC: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return standingDetail?.standings?.count ?? 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StandingsTableCell.cellId, for: indexPath) as! StandingsTableCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: StandingsTableCell.cellId, for: indexPath) as? StandingsTableCell else { return UITableViewCell() }
         cell.club = standingDetail?.standings?[indexPath.row]
         return cell
     }
 }
 
 //MARK: - Set Data & API
-extension DetailLeagueView
+extension DetailLeagueVC
 {
     func setHeaderValue() {
         lblLeagueName.text = league?.name ?? ""
@@ -113,7 +113,7 @@ extension DetailLeagueView
             if let e = error {
                 self.view.showToast(e)
             } else {
-                if let data = resData, let season = try? JSONDecoder().decode(mSeasonAvailable.self, from: data) {
+                if let data = resData, let season = try? JSONDecoder().decode(SeasonAvailable.self, from: data) {
                     self.detailSeason = season.data
                     self.seasonSelected = "\(season.data?.seasons?.first?.year ?? 0)"
                     self.lblOptioSelectSeason.setTitle(self.seasonSelected, for: .normal)
@@ -134,10 +134,10 @@ extension DetailLeagueView
             tableStandings.showAnimatedGradientSkeleton()
         }
         Network.request(.getStandings(leagueId, seasonSelected)) { resData, error in
-            if let e = error {
-                self.view.showToast(e)
+            if let errorMsg = error {
+                self.view.showToast(errorMsg)
             } else {
-                if let data = resData, let standings = try? JSONDecoder().decode(mStandingsLeague.self, from: data) {
+                if let data = resData, let standings = try? JSONDecoder().decode(StandingsLeague.self, from: data) {
                     self.standingDetail = standings.data
                     self.lblSelectedSeason.text = "Season: \(standings.data?.seasonDisplay ?? "")"
                 } else {

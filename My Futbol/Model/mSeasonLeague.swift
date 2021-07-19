@@ -5,16 +5,16 @@
 //  Created by Maul on 19/06/21.
 //
 
-struct mSeasonAvailable: Codable {
-    let data: mSeasonLeague?
+struct SeasonAvailable: Codable {
+    let data: SeasonLeague?
 }
 
-struct mSeasonLeague: Codable {
+struct SeasonLeague: Codable {
     let name: String?
-    let seasons: [mSeasonDetails]?
+    let seasons: [SeasonDetails]?
 }
 
-struct mSeasonDetails: Codable {
+struct SeasonDetails: Codable {
     let year: Int?
     let startDate, endDate, displayName: String?
 }

@@ -1,5 +1,5 @@
 //
-//  ListLeague.swift
+//  ListLeagueVC.swift
 //  My Futbol
 //
 //  Created by Maul on 19/06/21.
@@ -9,12 +9,12 @@ import UIKit
 import ImageSlideshow
 import SkeletonView
 
-class ListLeagueView: BaseVC {
+class ListLeagueVC: BaseVC {
     
     @IBOutlet weak var carouselHeader: ImageSlideshow!
     @IBOutlet weak var collectionLeague: UICollectionView!
     
-    var listLeague = [mLeague]()
+    private var listLeague = [League]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ListLeagueView: BaseVC {
     }
     
     override func rightButtonPressed(sender: UIBarButtonItem) {
-        let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "about") as! AboutView
+        guard let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "about") as? AboutVC else { return }
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
@@ -54,7 +54,7 @@ class ListLeagueView: BaseVC {
 }
 
 //MARK: - Collection Data
-extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+extension ListLeagueVC: SkeletonCollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         LeagueCollCell.cellId
@@ -65,7 +65,7 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCollCell.cellId, for: indexPath) as! LeagueCollCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCollCell.cellId, for: indexPath) as? LeagueCollCell else { return UICollectionViewCell() }
         cell.league = listLeague[indexPath.row]
         return cell
     }
@@ -96,9 +96,8 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
         selectLeague(listLeague[indexPath.row])
     }
     
-    func selectLeague(_ league: mLeague) {
-        let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "detailLeague") as! DetailLeagueView
-        
+    func selectLeague(_ league: League) {
+        guard let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "detailLeague") as? DetailLeagueVC else { return }
         let leagueIdTemp = league.id ?? ""
         vc.leagueId = leagueIdTemp == "eps.1" ? "esp.1" : leagueIdTemp ///karena aslinya kodenya esp.1 buat dapetin data, tetapi respon dari open api typo jadi "eps.1"
         vc.league = league
@@ -107,7 +106,7 @@ extension ListLeagueView: SkeletonCollectionViewDataSource, UICollectionViewDele
 }
 
 //MARK: - Set Data & API
-extension ListLeagueView
+extension ListLeagueVC
 {
     func setImgHeader() {
         let imgCarousel = [
@@ -128,10 +127,10 @@ extension ListLeagueView
     func apiGetListLeague() {
         collectionLeague.showAnimatedGradientSkeleton()
         Network.request(.getAllLeagues) { resData, error in
-            if let e = error {
-                self.view.showToast(e)
+            if let errorMsg = error {
+                self.view.showToast(errorMsg)
             } else {
-                if let data = resData, let league = try? JSONDecoder().decode(mAllLeagues.self, from: data) {
+                if let data = resData, let league = try? JSONDecoder().decode(AllLeagues.self, from: data) {
                     self.listLeague = league.data ?? []
                 } else {
                     self.view.showToast("Failed decode data.")
